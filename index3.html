@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Claim Your Foreclosure Surplus Funds</title>
+  <meta name="description" content="Find out if you're owed surplus funds after a foreclosure sale. Free, fast review." />
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#111a2e;
+      --muted:#94a3b8;
+      --text:#e5e7eb;
+      --accent:#22c55e;
+      --accent2:#38bdf8;
+      --danger:#fb7185;
+      --shadow: 0 16px 40px rgba(0,0,0,.35);
+      --radius:18px;
+      --max:1100px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background: radial-gradient(1200px 600px at 15% 10%, rgba(56,189,248,.18), transparent 60%),
+                  radial-gradient(900px 500px at 80% 25%, rgba(34,197,94,.14), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.5;
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:24px}
+    header{
+      display:flex; align-items:center; justify-content:space-between; gap:14px;
+      padding:10px 0 22px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:.2px;
+    }
+    .badge{
+      font-size:12px; color:#052e16; background:rgba(34,197,94,.95);
+      padding:6px 10px; border-radius:999px; font-weight:700;
+      box-shadow: 0 10px 22px rgba(34,197,94,.18);
+      white-space:nowrap;
+    }
+    .hero{
+      display:grid; grid-template-columns: 1.2fr .8fr; gap:22px;
+      align-items:stretch;
+    }
+    @media (max-width: 900px){
+      .hero{grid-template-columns:1fr}
+      header{flex-direction:column; align-items:flex-start}
+    }
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border: 1px solid rgba(148,163,184,.18);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .pad{padding:26px}
+    h1{
+      margin:0 0 10px;
+      font-size: clamp(28px, 3.4vw, 44px);
+      line-height:1.12;
+    }
+    .sub{
+      color:var(--muted);
+      font-size: clamp(15px, 1.6vw, 18px);
+      margin:0 0 18px;
+    }
+    .bullets{
+      display:grid; gap:10px; margin:18px 0 0; padding:0; list-style:none;
+    }
+    .bullets li{
+      display:flex; gap:10px; align-items:flex-start;
+      color:#dbeafe;
+    }
+    .dot{
+      width:10px; height:10px; border-radius:999px;
+      margin-top:7px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      flex:0 0 auto;
+    }
+    .ctaRow{display:flex; gap:12px; flex-wrap:wrap; margin-top:18px}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      padding:12px 16px;
+      border-radius:14px;
+      border:1px solid rgba(148,163,184,.22);
+      background: rgba(255,255,255,.06);
+      text-decoration:none;
+      font-weight:700;
+      cursor:pointer;
+    }
+    .btn.primary{
+      background: linear-gradient(135deg, var(--accent), #16a34a);
+      border: none;
+      color:#052e16;
+    }
+    .btn:hover{transform: translateY(-1px)}
+    .small{font-size:12px; color:var(--muted); margin-top:12px}
+    .formCard{
+      background: linear-gradient(180deg, rgba(17,26,46,.95), rgba(17,26,46,.72));
+    }
+    .formTitle{font-size:18px; margin:0 0 6px}
+    .formHint{margin:0 0 16px; color:var(--muted); font-size:13px}
+    form{display:grid; gap:12px}
+    label{font-size:12px; color:#cbd5e1}
+    input, select, textarea{
+      width:100%;
+      padding:12px 12px;
+      border-radius:12px;
+      border:1px solid rgba(148,163,184,.22);
+      background: rgba(2,6,23,.35);
+      color:var(--text);
+      outline:none;
+    }
+    textarea{min-height:92px; resize:vertical}
+    .row{display:grid; grid-template-columns:1fr 1fr; gap:10px}
+    @media (max-width: 520px){ .row{grid-template-columns:1fr} }
+    .note{
+      background: rgba(56,189,248,.08);
+      border:1px solid rgba(56,189,248,.22);
+      padding:12px;
+      border-radius:14px;
+      color:#e0f2fe;
+      font-size:12px;
+    }
+    .trust{
+      display:grid; grid-template-columns: repeat(3, 1fr); gap:12px;
+      margin-top:18px;
+    }
+    @media (max-width: 900px){ .trust{grid-template-columns:1fr} }
+    .trust .t{
+      background: rgba(255,255,255,.05);
+      border:1px solid rgba(148,163,184,.16);
+      border-radius: 16px;
+      padding:14px;
+      color:#e5e7eb;
+    }
+    .t b{display:block; margin-bottom:6px}
+    .section{margin-top:26px; display:grid; gap:14px}
+    .faq details{
+      background: rgba(255,255,255,.04);
+      border:1px solid rgba(148,163,184,.16);
+      border-radius:16px;
+      padding:14px 14px;
+    }
+    summary{cursor:pointer; font-weight:700}
+    footer{margin:26px 0 12px; color:var(--muted); font-size:12px}
+    .disclaimer{
+      border-top: 1px solid rgba(148,163,184,.18);
+      padding-top:14px;
+      margin-top:14px;
+      color: var(--muted);
+      font-size:12px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <span style="font-size:18px">🏠</span>
+        <span>Surplus Funds Review</span>
+      </div>
+      <div class="badge">Free Case Review • No Upfront Cost Option</div>
+    </header>
+
+    <main class="hero">
+      <!-- Left: Offer -->
+      <section class="card">
+        <div class="pad">
+          <h1>You may be owed money after a foreclosure sale.</h1>
+          <p class="sub">
+            When a property sells for more than what’s owed, the extra amount may be <b>surplus funds</b>.
+            We help former owners and heirs check eligibility and file claims.
+          </p>
+
+          <ul class="bullets">
+            <li><span class="dot"></span> Fast eligibility check (usually within 1 business day)</li>
+            <li><span class="dot"></span> We handle the paperwork, deadlines, and documentation</li>
+            <li><span class="dot"></span> If there are funds, we explain your options before you decide</li>
+          </ul>
+
+          <div class="ctaRow">
+            <a class="btn primary" href="#form">Check My Case</a>
+            <a class="btn" href="tel:+786 475 7261">Call Now</a>
+          </div>
+
+          <p class="small">Tip: If you’re unsure of the case number, submit the address and county— we can often locate the file.</p>
+
+          <div class="trust">
+            <div class="t"><b>Transparent</b>No surprise fees—terms explained before any work begins.</div>
+            <div class="t"><b>Secure</b>Your info is used only to evaluate and pursue your claim.</div>
+            <div class="t"><b>Helpful</b>We’ll tell you if it’s not a fit and what to do next.</div>
+          </div>
+
+          <div class="section faq">
+            <details>
+              <summary>What are foreclosure surplus funds?</summary>
+              <p>
+                Surplus funds are the remaining proceeds after liens and approved costs are paid from a foreclosure sale.
+                If funds exist, the entitled party may be able to claim them (rules vary by state).
+              </p>
+            </details>
+            <details>
+              <summary>Who can claim them?</summary>
+              <p>
+                Often the former owner, heirs, or other entitled parties. The exact rules depend on the state,
+                case type, and priority of claims.
+              </p>
+            </details>
+            <details>
+              <summary>How long do I have?</summary>
+              <p>
+                Deadlines vary. Some places are strict. It’s best to check quickly so you don’t miss filing windows.
+              </p>
+            </details>
+          </div>
+
+          <div class="disclaimer">
+            <b>Disclaimer:</b> This site provides general information and is not legal advice.
+            We are not a law firm. If you need legal advice, consult an attorney licensed in your state.
+          </div>
+        </div>
+      </section>
+
+      <!-- Right: Form -->
+      <aside id="form" class="card formCard">
+        <div class="pad">
+          <h2 class="formTitle">Free Surplus Funds Check</h2>
+          <p class="formHint">Submit details below. We’ll contact you with next steps.</p>
+
+          <!-- FREE option: FormSubmit sends to your email -->
+          <form action="https://formsubmit.co/info@ayngelmanagement.com" method="POST">
+            <!-- FormSubmit settings -->
+            <input type="hidden" name="_subject" value="New Surplus Funds Lead" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+            <!-- optional: redirect after submit -->
+            <!-- <input type="hidden" name="_next" value="https://yourdomain.com/thanks.html" /> -->
+
+            <div class="row">
+              <div>
+                <label for="name">Full Name</label>
+                <input id="name" name="name" placeholder="Jane Doe" required />
+              </div>
+              <div>
+                <label for="phone">Phone</label>
+                <input id="phone" name="phone" placeholder="(555) 555-5555" required />
+              </div>
+            </div>
+
+            <div class="row">
+              <div>
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="jane@email.com" required />
+              </div>
+              <div>
+                <label for="state">State</label>
+                <select id="state" name="state" required>
+                  <option value="" selected disabled>Select</option>
+                  <option>AL</option><option>AK</option><option>AZ</option><option>AR</option><option>CA</option>
+                  <option>CO</option><option>CT</option><option>DE</option><option>FL</option><option>GA</option>
+                  <option>HI</option><option>ID</option><option>IL</option><option>IN</option><option>IA</option>
+                  <option>KS</option><option>KY</option><option>LA</option><option>ME</option><option>MD</option>
+                  <option>MA</option><option>MI</option><option>MN</option><option>MS</option><option>MO</option>
+                  <option>MT</option><option>NE</option><option>NV</option><option>NH</option><option>NJ</option>
+                  <option>NM</option><option>NY</option><option>NC</option><option>ND</option><option>OH</option>
+                  <option>OK</option><option>OR</option><option>PA</option><option>RI</option><option>SC</option>
+                  <option>SD</option><option>TN</option><option>TX</option><option>UT</option><option>VT</option>
+                  <option>VA</option><option>WA</option><option>WV</option><option>WI</option><option>WY</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="address">Property Address (or city/county)</label>
+              <input id="address" name="address" placeholder="123 Main St, City, County" />
+            </div>
+
+            <div class="row">
+              <div>
+                <label for="county">County (if known)</label>
+                <input id="county" name="county" placeholder="Broward" />
+              </div>
+              <div>
+                <label for="case">Case # (if known)</label>
+                <input id="case" name="case_number" placeholder="2023-CA-000123" />
+              </div>
+            </div>
+
+            <div>
+              <label for="notes">Anything else to share?</label>
+              <textarea id="notes" name="notes" placeholder="Approx sale date, whether you’re an heir, etc."></textarea>
+            </div>
+
+            <button class="btn primary" type="submit">Request Free Review</button>
+
+            <div class="note">
+              By submitting, you consent to be contacted about your request. Message/data rates may apply.
+              You can opt out anytime.
+            </div>
+          </form>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      © <span id="yr"></span> Surplus Funds Review. All rights reserved.
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("yr").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
